@@ -18,6 +18,9 @@
 - title: Open Source Projects
   type: time_table
   contents:
-    - title: <a href="https://github.com/eoan-ermine/load_balancer">load_balancer</a>
-      year: 2023-now
-      description: Simple load balancer written in C++
+    - title: <a href="https://github.com/eoan-ermine/tftp_common">TFTP Common</a>
+      year: 2023
+      description: A simple header-only Trivial File Transfer Protocol (TFTP) packets parsing and serialization library
+    - title: <a href="https://github.com/eoan-ermine/load_balancer">Load Balancer</a>
+      year: 2023
+      description: Simple load balancer written with Boost.Asio
