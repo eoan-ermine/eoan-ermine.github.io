@@ -18,6 +18,6 @@
 - title: Open Source Projects
   type: time_table
   contents:
-    - title: <a href="https://github.com/PatriotRossii/load_balancer">load_balancer</a>
+    - title: <a href="https://github.com/eoan-ermine/load_balancer">load_balancer</a>
       year: 2023-now
       description: Simple load balancer written in C++
