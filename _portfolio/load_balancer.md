@@ -1,8 +1,9 @@
 ---
 layout: page
 title: load balancer
-importance: 1
+description:  Simple load balancer written with Boost.Asio 
+importance: 3
 github: https://github.com/eoan-ermine/load_balancer
-github_stars: 3
+github_stars: 2
 ---
 
