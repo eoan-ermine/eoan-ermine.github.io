@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://PatriotRossii.github.io/sitemap.xml
+Sitemap: https://eoan-ermine.github.io/sitemap.xml
