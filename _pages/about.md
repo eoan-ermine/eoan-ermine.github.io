@@ -15,4 +15,6 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-18 y.o student, interested in compilers and c++ programming language.
+18 y.o software engineer, with main interests in the development of the C++ programming language.
+
+At the same time, a backend developer, a graduate of the Yandex Academy's Backend Development School.
