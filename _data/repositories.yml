@@ -5,5 +5,5 @@ github_repos:
   - eoan-ermine/tftp_common
   - eoan-ermine/tftp_client
   - eoan-ermine/load_balancer
-  - eoan-ermine/transaction_processing
+  - eoan-ermine/transactions_processing
   - eoan-ermine/make_uninstall
