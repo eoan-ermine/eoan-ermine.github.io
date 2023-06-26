@@ -1,7 +1,7 @@
 ---
 layout: page
 original_title: Grokking Algorithms
-title: Грокк=аем алгоритмы
+title: Гроккаем алгоритмы
 date_from: 2023-06-23 17:00:00-0400
 date_to: 2023-06-23 19:15:00-0400
 pages: 290
