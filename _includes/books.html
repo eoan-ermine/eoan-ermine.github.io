@@ -1,0 +1,26 @@
+<!-- _includes/books.html -->
+<div class="grid-sizer"></div>
+<div class="grid-item">
+  {% if book.redirect -%}
+  <a href="{{ book.redirect }}">
+    {%- else -%}
+    <a href="{{ book.url | relative_url }}">
+      {%- endif %}
+      <div class="card hoverable">
+        {%- if book.img %}
+        {%- include figure.html
+          path=book.img
+          alt="book thumbnail" -%}
+        {%- endif %}
+        <div class="card-body">
+          <h2 class="card-title">{{ book.title }}</h2>
+          <div class="card-text">
+            <p class="text-muted">{{ book.author }}</p>
+            <span>📅 {{ book.date_to | date: "%d" | plus:'0' }} {{ book.date_to | date: "%B %Y" }}</span>
+            <p class="float-right">{{ book.pages }} pages</p>
+          </div>
+        </div>
+        <div class="row ml-1 mr-1 p-0"></div>
+      </div>
+    </a>
+</div>
