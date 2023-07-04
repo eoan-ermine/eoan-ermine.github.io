@@ -1,0 +1,28 @@
+<div class="card-item col">
+  <div class="card hoverable">
+    <div class="row g-0">
+      {%- if course.img -%}
+      <div class="card-img col-md-6">
+        {% include figure.html path=course.img alt="course thumbnail" %}
+      </div>
+      <div class="col-md-6">
+      {%- else -%}
+      <div class="col-md-12">
+      {%- endif -%}
+      <div class="card-body">
+        {%- if course.redirect -%}
+        <a href="{{ course.redirect }}">
+        {%- else -%}
+        <a href="{{ course.url | relative_url }}">
+        {%- endif -%}
+        <h3 class="card-title">{{ course.title }}</h3>
+        </a>
+        <div class="card-text">
+          <p class="text-muted">{{ course.author }}</p>
+        </div>
+        <div class="row ml-1 mr-1 p-0"></div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
