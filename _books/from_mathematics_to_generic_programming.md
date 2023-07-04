@@ -1,7 +1,9 @@
 ---
 layout: page
-original_title: From Mathematics to Generic Programming
-title: От математики к обобщенному программированию
+title: From Mathematics to Generic Programming
+russian_title: От математики к обобщенному программированию
+author: Alexander A. Stepanov, Daniel E. Rose
+russian_author: Степанов Александр А., Роуз Дэниэл Э.
 date_from: 2023-06-20 09:00:00-0400
 date_to: 2023-06-20 22:42:00-0400
 pages: 263

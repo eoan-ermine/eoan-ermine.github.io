@@ -1,7 +1,10 @@
 ---
 layout: page
-original_title: Mythical Man-Month
-title: Мифический человеко-месяц
+title: Mythical Man-Month
+russian_title: Мифический человеко-месяц
+author: Fred Brooks
+russian_author: Фред Брукс
+date_to: 2023-07-02 00:00:00-0400
 pages: 336
 ---
 
@@ -15,4 +18,4 @@ pages: 336
 
 The book, of course, is not about software development, but about project management in the field of software, but, nevertheless, it is very interesting.
 
-Frederick Brooks is a very interesting guy, and his experience is also very interesting: the development of many huge projects, but first of all [OS/360] (https://ru.wikipedia.org/wiki/OS/360 ) at IBM. And what methods were already used then, what difficulties were encountered — this is more than interesting.
+Frederick Brooks is a very interesting guy, and his experience is also very interesting: the development of many huge projects, but first of all [OS/360](https://ru.wikipedia.org/wiki/OS/360) at IBM. And what methods were already used then, what difficulties were encountered — this is more than interesting.

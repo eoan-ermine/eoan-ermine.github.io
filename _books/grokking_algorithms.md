@@ -1,7 +1,9 @@
 ---
 layout: page
-original_title: Grokking Algorithms
-title: Гроккаем алгоритмы
+title: Grokking Algorithms
+russian_title: Гроккаем алгоритмы
+author: Aditya Bhargava
+russian_author: Адитья Бхаргава
 date_from: 2023-06-23 17:00:00-0400
 date_to: 2023-06-23 19:15:00-0400
 pages: 290
@@ -25,7 +27,7 @@ I decided to read the popular book "Grokking Algorithms" for entertainment.
 
 Not a bad thing for beginners: algorithms are covered superficially, you won't find a description of twenty different sorting algorithms in the book, but examples of their work are dealt with in great detail.
 
-And, besides, the author, introducing new concepts, always chews them in detail, so that it is possible to read it even to people, it seems to me, who are not familiar with programming, or who started programming only yesterday.
+And, besides, the russian_author, introducing new concepts, always chews them in detail, so that it is possible to read it even to people, it seems to me, who are not familiar with programming, or who started programming only yesterday.
 
 There are few exercises for writing programs, but in general there are exercises.
 

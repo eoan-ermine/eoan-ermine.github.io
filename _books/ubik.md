@@ -1,7 +1,9 @@
 ---
 layout: page
-original_title: Убик
 title: Ubik
+russian_title: Убик
+author: Philip K. Dick
+russian_author: Филип Дик К.
 date_from: 2023-06-24 00:00:00-0400
 date_to: 2023-06-25 00:00:00-0400
 pages: 202
