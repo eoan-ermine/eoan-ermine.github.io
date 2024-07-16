@@ -478,8 +478,8 @@ the function’s parameter (<a href="https://godbolt.org/z/3qv3h7Tfj">godbolt</a
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  f<span class="op">({</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span><span class="op">})</span>;</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p>But, for reasons unknown, we can’t deduce the type of the array
-itself (<a href="https://godbolt.org/z/o4h96n3on">godbolt</a>):</p>
+<p>But, for reasons unknown, we can’t deduce the placeholder type in the
+array type itself (<a href="https://godbolt.org/z/o4h96n3on">godbolt</a>):</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">auto</span> arr<span class="op">[]</span> <span class="op">=</span> <span class="op">{</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span><span class="op">}</span>; <span class="co">// Compilation error</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
