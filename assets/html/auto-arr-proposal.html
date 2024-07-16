@@ -555,12 +555,10 @@ a function call (<span>13.10.3.2
 <a href="https://wg21.link/temp.deduct.call">[temp.deduct.call]</a></span>),
 where P is a function template parameter type and the corresponding
 argument is E<span class="add" style="color: #006e28"><ins>, except that
-if P is an array type, U(&amp;)[N] is used in place of P as a function
-template parameter type where N is a function non-type template
-parameter of type
-<span><code class="sourceCode default">std::size_t</code></span></ins></span>.
-If the deduction fails, the declaration is ill-formed. Otherwise, T′ is
-obtained by substituting the deduced U into P.</p>
+if P is an array type, P&amp; is used in place of P as a function
+template parameter type</ins></span>. If the deduction fails, the
+declaration is ill-formed. Otherwise, T′ is obtained by substituting the
+deduced U into P.</p>
 </blockquote>
 <p>Modify <span>9.3.4.5
 <a href="https://wg21.link/dcl.array">[dcl.array]</a></span> paragraph 8
