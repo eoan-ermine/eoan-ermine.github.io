@@ -516,10 +516,9 @@ but we don’t propose allowing either <code class="sourceCode cpp"><span class=
 or <code class="sourceCode cpp"><span class="kw">auto</span> y<span class="op">[</span><span class="dv">5</span><span class="op">]</span> <span class="op">=</span> x</code>
 from the examples above.</p>
 <p>We believe that the current status quo is inconsistent with others
-core features, as it creates an unexplainable exception to arrays from
-the general rules of placeholder type deduction. We propose removing
-this exception allowing deduction of a placeholder type in array
-types.</p>
+core features, as it creates an unexplainable exception to the general
+rule of placeholder type deduction for arrays. We propose removing this
+exception allowing deduction of a placeholder type in array types.</p>
 <h1 data-number="3" id="design"><span class="header-section-number">3</span> Design<a href="#design" class="self-link"></a></h1>
 <p>The only changes we propose is removing the exception prohibiting
 array types in types containing a placeholder type. We don’t propose any
