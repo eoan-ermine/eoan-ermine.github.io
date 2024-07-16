@@ -476,15 +476,13 @@ the function’s parameter (<a href="https://godbolt.org/z/3qv3h7Tfj">godbolt</a
 <div class="sourceCode" id="cb2"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">auto</span> f<span class="op">(</span><span class="kw">auto</span><span class="op">(&amp;&amp;</span>arr<span class="op">)[])</span> <span class="op">{</span> <span class="cf">return</span> arr<span class="op">[</span><span class="dv">0</span><span class="op">]</span>; <span class="op">}</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  f<span class="op">({</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span><span class="op">})</span>;</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    f<span class="op">({</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span><span class="op">})</span>;</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>But, for reasons unknown, we can’t deduce the placeholder type in the
 array type itself (<a href="https://godbolt.org/z/o4h96n3on">godbolt</a>):</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">auto</span> arr<span class="op">[]</span> <span class="op">=</span> <span class="op">{</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span><span class="op">}</span>; <span class="co">// Compilation error</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">auto</span> arr<span class="op">[]</span> <span class="op">=</span> <span class="op">{</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span><span class="op">}</span>; <span class="co">// IF</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p>So, this paper proposes removing this limitation.</p>
-<h1 data-number="3" id="design"><span class="header-section-number">3</span> Design<a href="#design" class="self-link"></a></h1>
 <p>This restriction was introduced intentionally in <span class="citation" data-cites="N1984">[<a href="https://wg21.link/n1984" role="doc-biblioref">N1984</a>]</span> page 6:</p>
 <blockquote>
 <p>Currently, the change is thus to ban the use of auto with arrays.
@@ -507,16 +505,64 @@ deduction. If we get a compilation error in the following program, then
 why should we think about it in the context of
 <code class="sourceCode cpp"><span class="kw">auto</span></code>?</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x<span class="op">[</span><span class="dv">5</span><span class="op">]</span>;</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* ~auto~ */</span> <span class="dt">int</span> y<span class="op">[</span><span class="dv">5</span><span class="op">]</span> <span class="op">=</span> x; <span class="co">// Compilation error, and it&#39;s OK</span></span></code></pre></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* ~auto~ */</span> <span class="dt">int</span> y<span class="op">[</span><span class="dv">5</span><span class="op">]</span> <span class="op">=</span> x; <span class="co">// IF, and it&#39;s OK</span></span></code></pre></div>
 <p><code class="sourceCode cpp"><span class="kw">auto</span></code> is a
 <em>placeholder type</em> and nothing more. If we allowed <code class="sourceCode cpp"><span class="kw">auto</span> y<span class="op">[</span><span class="dv">5</span><span class="op">]</span> <span class="op">=</span> x</code>,
 it would mean that
 <code class="sourceCode cpp"><span class="kw">auto</span></code> has
-acquired an additional meaning that changes the initialization rules. So
-we propose enabling <code class="sourceCode cpp"><span class="kw">auto</span> x<span class="op">[]</span> <span class="op">=</span> <span class="op">{</span> a, b, c <span class="op">}</span></code>,
+acquired an additional meaning that changes the initialization rules.
+Answering to the questions above, we propose enabling <code class="sourceCode cpp"><span class="kw">auto</span> x<span class="op">[]</span> <span class="op">=</span> <span class="op">{</span> a, b, c <span class="op">}</span></code>,
 but we don’t propose allowing either <code class="sourceCode cpp"><span class="kw">auto</span> y<span class="op">[]</span> <span class="op">=</span> x</code>
 or <code class="sourceCode cpp"><span class="kw">auto</span> y<span class="op">[</span><span class="dv">5</span><span class="op">]</span> <span class="op">=</span> x</code>
 from the examples above.</p>
+<p>We believe that the current status quo is inconsistent with others
+core features, as it creates an unexplainable exception to arrays from
+the general rules of placeholder type deduction. We propose removing
+this exception allowing deduction of a placeholder type in array
+types.</p>
+<h1 data-number="3" id="design"><span class="header-section-number">3</span> Design<a href="#design" class="self-link"></a></h1>
+<p>The only changes we propose is removing the exception prohibiting
+array types in types containing a placeholder type. We don’t propose any
+changes to the existing rules for template arguments deduction from
+function call (<span>13.10.3.2
+<a href="https://wg21.link/temp.deduct.call">[temp.deduct.call]</a></span>),
+which are the heart of placeholder type deduction, or anywhere else.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">auto</span> x0<span class="op">[]</span> <span class="op">=</span> <span class="op">{</span><span class="dv">1</span>, <span class="ch">&#39;a&#39;</span><span class="op">}</span>; <span class="co">// IF (1)</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">//  auto x0 = {1, &#39;a&#39;};   // IF</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> x1<span class="op">[]</span> <span class="op">=</span> <span class="op">{</span><span class="dv">1</span>, <span class="dv">2</span><span class="op">}</span>;</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">auto</span> x2<span class="op">[]</span> <span class="op">{</span>x1<span class="op">}</span>; <span class="co">// OK (2)</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">auto</span> x3<span class="op">[]</span> <span class="op">(</span><span class="dv">1</span>, <span class="dv">2</span><span class="op">)</span>; <span class="co">// OK (3)</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">//  int x3[] (1, 2);  // OK</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">auto</span> x4<span class="op">[][]</span> <span class="op">=</span> <span class="op">{{</span><span class="dv">1</span>, <span class="dv">2</span><span class="op">}</span>, <span class="op">{</span><span class="dv">3</span>, <span class="dv">4</span><span class="op">}}</span>; <span class="co">// IF (4)</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">auto</span> x5<span class="op">[</span><span class="dv">3</span><span class="op">]</span> <span class="op">=</span> <span class="op">{</span><span class="dv">1</span>, <span class="dv">2</span><span class="op">}</span>; <span class="co">// OK (5)</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<ol type="1">
+<li>The declaration is IF, because of the rules for template arguments
+deduction from function call (<span>13.10.3.2
+<a href="https://wg21.link/temp.deduct.call">[temp.deduct.call]</a></span>).
+This behavior is consistent with the behavior of type deduction in the
+case of <code class="sourceCode cpp">std<span class="op">::</span>initializer_list</code>,
+cause arrays and <code class="sourceCode cpp">std<span class="op">::</span>initializer_list</code>
+are sharing the same rules.</li>
+<li>The declaration is OK, cause it’s common aggregate initialization
+syntax for array types, the type of
+<code class="sourceCode cpp">x2</code> is <code class="sourceCode cpp"><span class="dt">int</span><span class="op">*[</span><span class="dv">1</span><span class="op">]</span></code></li>
+<li>The declaration is OK, cause it’s common direct initialization
+syntax for array types, the type of
+<code class="sourceCode cpp">x3</code> is <code class="sourceCode cpp"><span class="dt">int</span><span class="op">[</span><span class="dv">2</span><span class="op">]</span></code></li>
+<li>The declaration is IF, because an array cannot have an incomplete
+element type (<code class="sourceCode cpp"><span class="kw">auto</span><span class="op">[]</span></code>
+is an incomplete type).</li>
+<li>The declaration is OK, because aggregate initialization rules do not
+require explicit initialization of all elements, (<span>9.4.2
+<a href="https://wg21.link/dcl.init.aggr">[dcl.init.aggr]</a></span>)
+the type of <code class="sourceCode cpp">x5</code> is <code class="sourceCode cpp"><span class="dt">int</span><span class="op">[</span><span class="dv">3</span><span class="op">]</span></code>.</li>
+</ol>
 <h1 data-number="4" id="wording"><span class="header-section-number">4</span> Wording<a href="#wording" class="self-link"></a></h1>
 <p>Modify <span>9.2.9.7.2
 <a href="https://wg21.link/dcl.type.auto.deduct">[dcl.type.auto.deduct]</a></span>
