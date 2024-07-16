@@ -549,8 +549,28 @@ Deduce a value for U using the rules of template argument deduction from
 a function call (<span>13.10.3.2
 <a href="https://wg21.link/temp.deduct.call">[temp.deduct.call]</a></span>),
 where P is a function template parameter type and the corresponding
-argument is E. If the deduction fails, the declaration is ill-formed.
-Otherwise, T′ is obtained by substituting the deduced U into P.</p>
+argument is E<span class="add" style="color: #006e28"><ins>, except that
+if P is an array type, U(&amp;)[N] is used in place of P as a function
+template parameter type where N is a function non-type template
+parameter of type
+<span><code class="sourceCode default">std::size_t</code></span></ins></span>.
+If the deduction fails, the declaration is ill-formed. Otherwise, T′ is
+obtained by substituting the deduced U into P.</p>
+</blockquote>
+<p>Modify <span>9.3.4.5
+<a href="https://wg21.link/dcl.array">[dcl.array]</a></span> paragraph 8
+as follows:</p>
+<blockquote>
+<p>An array bound may also be omitted when an object (but not a
+non-static data member) of array type is initialized and the declarator
+is followed by an initializer (<span>9.4
+<a href="https://wg21.link/dcl.init">[dcl.init]</a></span>, <span>11.4
+<a href="https://wg21.link/class.mem">[class.mem]</a></span>,
+<span>7.6.1.4
+<a href="https://wg21.link/expr.type.conv">[expr.type.conv]</a></span>,
+<span>7.6.2.8
+<a href="https://wg21.link/expr.new">[expr.new]</a></span><span class="add" style="color: #006e28"><ins>, <span>9.2.9.7.2
+<a href="https://wg21.link/dcl.type.auto.deduct">[dcl.type.auto.deduct]</a></span></ins></span>).</p>
 </blockquote>
 <h1 data-number="5" id="bibliography"><span class="header-section-number">5</span> References<a href="#bibliography" class="self-link"></a></h1>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="1" role="doc-bibliography">
