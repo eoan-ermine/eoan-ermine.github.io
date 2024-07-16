@@ -9,8 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>
-        blog | Danil V. Sidoruk (aka eoanermine)</title>
+    <title>blog - page 2 | Danil V. Sidoruk (aka eoanermine)</title>
     <meta name="author" content="Danil V. Sidoruk (aka eoanermine)" />
     <meta name="description" content="Danil Sidoruk's (aka eoanermine) personal blog
 " />
@@ -34,7 +33,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚛️</text></svg>">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://eoanermine.com/blog/">
+    <link rel="canonical" href="https://eoanermine.com/blog/page/2/">
     
     <!-- Dark Mode -->
     
@@ -132,85 +131,17 @@
       <h3>
         
           
-            <a class="post-title" href="https://habr.com/ru/articles/791042/?utm_campaign=791042&utm_source=habrahabr&utm_medium=rss" target="_blank">Какой тип ordering должен возвращать мой operator&lt;=&gt; в C++?</a>
+            <a class="post-title" href="https://habr.com/ru/articles/764922/?utm_campaign=764922&utm_source=habrahabr&utm_medium=rss" target="_blank">C++ Дайджест №4 (18 сентября – 1 октября 2023)</a>
             <svg width="2rem" height="2rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
               <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           
         
       </h3>
-      <p><img src="https://habrastorage.org/getpro/habr/upload_files/5ae/d85/467/5aed854677956be2c5f3a19a4353c54d.png" /><p>На Хабре было опубликовано уже достаточно статей, посвященных <a href="https://en.cppreference.com/w/cpp/language/operator_comparison#Three-way%20comparison" rel="noopener noreferrer nofollow">«spaceship operator» </a><code>operator&lt;=&gt;</code> (<a href="https://habr.com/ru/companies/microsoft/articles/458242/" rel="noopener noreferrer nofollow">[1]</a>, <a href="https://habr.com/ru/articles/766976/" rel="noopener noreferrer nofollow">[2]</a>, <a href="https://habr.com/ru/companies/yandex/articles/342354/" rel="noopener noreferrer nofollow">[3]</a>, <a href="https://habr.com/ru/companies/pvs-studio/articles/465575/" rel="noopener noreferrer nofollow">[4]</a>) И этой статьи бы не было, если бы все они были идеальны и описывали его во всей полноте. Но ни одна из них в деталях не рассказывает: <strong>а какой тип, собственно, должен возвращать наш </strong><code>operator&lt;=&gt;</code>, если мы реализуем его своими руками: <code>std::strong_ordering</code>, <code>std::weak_ordering</code> или <code>std::partial_ordering</code>? <strong>И какая вообще между ними разница?</strong></p><p></p> <a href="https://habr.com/ru/articles/791042/?utm_campaign=791042&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a></p>
+      <p><img src="https://habrastorage.org/getpro/habr/upload_files/776/bb7/983/776bb798365ad89bc6c63a0e0c771843.png" /><p>Привет, Хабр! Сегодня я хочу вам представить подборку интересных новостей и материалов из мира C++ за последние две недели.</p><p>Приятного чтения!</p><p></p> <a href="https://habr.com/ru/articles/764922/?utm_campaign=764922&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a></p>
       <p class="post-meta">
         1 min read &nbsp; &middot; &nbsp;
-        February 3, 2024
-        &nbsp; &middot; &nbsp; habr.com
-      </p>
-      <p class="post-tags">
-        <a href="/blog/2024">
-          <i class="fas fa-calendar fa-sm"></i> 2024 </a>
-
-          
-
-          
-    </p>
-    </li>
-
-    
-
-    
-    
-    
-    
-
-    <li>
-      <h3>
-        
-          
-            <a class="post-title" href="https://habr.com/ru/articles/788524/?utm_campaign=788524&utm_source=habrahabr&utm_medium=rss" target="_blank">Многообразие функциональных обёрток</a>
-            <svg width="2rem" height="2rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          
-        
-      </h3>
-      <p><p>В далёком 2002-ом комитет по стандартизации C++ посетил пропозал, предлагавший ввести шаблонный класс, некий обобщенный «указатель на функцию», способный работать как с простыми указателями на функции, указателями на методы классов, так и с произвольными функциональными объектами <a href="https://wg21.link/n1402" rel="noopener noreferrer nofollow">[1]</a>.</p><p>В качестве мотивации к принятию он приводил несколько весомых юзкейсов: колбэки и функции высших порядков.</p><p>Кто же знал, что его окажется недостаточно, а один из его юзкейсов — вовсе не его юзкейс?</p><p></p> <a href="https://habr.com/ru/articles/788524/?utm_campaign=788524&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a></p>
-      <p class="post-meta">
-        1 min read &nbsp; &middot; &nbsp;
-        January 24, 2024
-        &nbsp; &middot; &nbsp; habr.com
-      </p>
-      <p class="post-tags">
-        <a href="/blog/2024">
-          <i class="fas fa-calendar fa-sm"></i> 2024 </a>
-
-          
-
-          
-    </p>
-    </li>
-
-    
-
-    
-    
-    
-    
-
-    <li>
-      <h3>
-        
-          
-            <a class="post-title" href="https://habr.com/ru/articles/773894/?utm_campaign=773894&utm_source=habrahabr&utm_medium=rss" target="_blank">C++ Дайджест №7 (30 октября – 12 ноября 2023)</a>
-            <svg width="2rem" height="2rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          
-        
-      </h3>
-      <p><img src="https://habrastorage.org/getpro/habr/upload_files/f21/6d2/f2d/f216d2f2d553b76d2e100b7a2f30cf3b.png" /><p>Привет, Хабр! Сегодня я хочу вам представить подборку интересных новостей и материалов из мира C++ за последние две недели.</p><p>Приятного чтения!</p><p></p> <a href="https://habr.com/ru/articles/773894/?utm_campaign=773894&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a></p>
-      <p class="post-meta">
-        1 min read &nbsp; &middot; &nbsp;
-        November 14, 2023
+        October 2, 2023
         &nbsp; &middot; &nbsp; habr.com
       </p>
       <p class="post-tags">
@@ -234,17 +165,17 @@
       <h3>
         
           
-            <a class="post-title" href="https://habr.com/ru/articles/770958/?utm_campaign=770958&utm_source=habrahabr&utm_medium=rss" target="_blank">C++ Дайджест №6 (16 октября – 29 октября 2023)</a>
+            <a class="post-title" href="https://habr.com/ru/articles/761786/?utm_campaign=761786&utm_source=habrahabr&utm_medium=rss" target="_blank">C++ Дайджест №3 (4 сентября – 17 сентября 2023)</a>
             <svg width="2rem" height="2rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
               <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           
         
       </h3>
-      <p><img src="https://habrastorage.org/getpro/habr/upload_files/ea5/8b9/501/ea58b95019d1c5cd9d65e43b7493df20.png" /><p>Привет, Хабр! Сегодня я хочу вам представить подборку интересных новостей и материалов из мира C++ за последние две недели.</p><p>Приятного чтения!</p><p></p> <a href="https://habr.com/ru/articles/770958/?utm_campaign=770958&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a></p>
+      <p><img src="https://habrastorage.org/getpro/habr/upload_files/c2a/b3b/14a/c2ab3b14abd3b8a9dbbd0438c5072f19.png" /><p>Привет, Хабр! Сегодня я хочу вам представить подборку интересных новостей и материалов из мира C++ за последние две недели.</p><p>Приятного чтения!</p><p></p> <a href="https://habr.com/ru/articles/761786/?utm_campaign=761786&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a></p>
       <p class="post-meta">
         1 min read &nbsp; &middot; &nbsp;
-        October 31, 2023
+        September 18, 2023
         &nbsp; &middot; &nbsp; habr.com
       </p>
       <p class="post-tags">
@@ -268,17 +199,85 @@
       <h3>
         
           
-            <a class="post-title" href="https://habr.com/ru/articles/767818/?utm_campaign=767818&utm_source=habrahabr&utm_medium=rss" target="_blank">C++ Дайджест №5 (2 октября – 15 октября 2023)</a>
+            <a class="post-title" href="https://habr.com/ru/articles/758630/?utm_campaign=758630&utm_source=habrahabr&utm_medium=rss" target="_blank">C++ Дайджест №2 (21 августа 2023 – 3 сентября 2023)</a>
             <svg width="2rem" height="2rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
               <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           
         
       </h3>
-      <p><img src="https://habrastorage.org/getpro/habr/upload_files/744/0e1/06b/7440e106b7d897c7c6e2970b02d36217.png" /><p>Привет, Хабр! Сегодня я хочу вам представить подборку интересных новостей и материалов из мира C++ за последние две недели.</p><p>Приятного чтения!</p><p></p> <a href="https://habr.com/ru/articles/767818/?utm_campaign=767818&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a></p>
+      <p><p>Привет, Хабр! Сегодня я хочу вам представить подборку интересных новостей и материалов из мира C++ за последние две недели.</p><p>Приятного чтения!</p><p></p> <a href="https://habr.com/ru/articles/758630/?utm_campaign=758630&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a></p>
       <p class="post-meta">
         1 min read &nbsp; &middot; &nbsp;
-        October 16, 2023
+        September 3, 2023
+        &nbsp; &middot; &nbsp; habr.com
+      </p>
+      <p class="post-tags">
+        <a href="/blog/2023">
+          <i class="fas fa-calendar fa-sm"></i> 2023 </a>
+
+          
+
+          
+    </p>
+    </li>
+
+    
+
+    
+    
+    
+    
+
+    <li>
+      <h3>
+        
+          
+            <a class="post-title" href="https://habr.com/ru/articles/755820/?utm_campaign=755820&utm_source=habrahabr&utm_medium=rss" target="_blank">C++ Дайджест №1 (7 августа 2023 – 20 августа 2023)</a>
+            <svg width="2rem" height="2rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          
+        
+      </h3>
+      <p><p>Привет, Хабр! Сегодня я хочу вам представить подборку интересных новостей и материалов из мира C++ за последние две недели.</p><p>Приятного чтения!</p><p></p> <a href="https://habr.com/ru/articles/755820/?utm_campaign=755820&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a></p>
+      <p class="post-meta">
+        1 min read &nbsp; &middot; &nbsp;
+        August 21, 2023
+        &nbsp; &middot; &nbsp; habr.com
+      </p>
+      <p class="post-tags">
+        <a href="/blog/2023">
+          <i class="fas fa-calendar fa-sm"></i> 2023 </a>
+
+          
+
+          
+    </p>
+    </li>
+
+    
+
+    
+    
+    
+    
+
+    <li>
+      <h3>
+        
+          
+            <a class="post-title" href="https://habr.com/ru/articles/752802/?utm_campaign=752802&utm_source=habrahabr&utm_medium=rss" target="_blank">C++ Дайджест #0 (24 июля 2023 – 6 августа 2023)</a>
+            <svg width="2rem" height="2rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          
+        
+      </h3>
+      <p><p>Привет, Хабр! Сегодня я хочу представить вам подборку интересных новостей и материалов из мира C++.</p><p>Это пилотный выпуск, так что любые советы, отзывы и рекомендации, как сделать наш дайджест лучше, в комментариях к статье или же напрямую мне в личные сообщения (<a href="https://habr.com/conversations/eoanermine/" rel="noopener noreferrer nofollow">habr</a>, <a href="https://t.me/eoanermine" rel="noopener noreferrer nofollow">tg</a>) приветствуются!</p><p>Приятного чтения!</p><p></p> <a href="https://habr.com/ru/articles/752802/?utm_campaign=752802&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a></p>
+      <p class="post-meta">
+        1 min read &nbsp; &middot; &nbsp;
+        August 6, 2023
         &nbsp; &middot; &nbsp; habr.com
       </p>
       <p class="post-tags">
@@ -296,13 +295,13 @@
 
   <nav aria-label="Blog page naviation">
   <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li><li class="page-item active"><a class="page-link" href="/blog/index.html" title="blog">1</a></li>
-      <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blog - page 2">2</a></li>
+    <li class="page-item ">
+      <a class="page-link" href="/blog/" tabindex="-1" aria-disabled="1">Newer</a>
+    </li><li class="page-item "><a class="page-link" href="/blog/index.html" title="blog">1</a></li>
+      <li class="page-item active"><a class="page-link" href="/blog/page/2/index.html" title="blog - page 2">2</a></li>
       <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blog - page 3">3</a></li>
       <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
+      <a class="page-link" href="/blog/page/3/">Older</a>
     </li>
   </ul>
 </nav>
