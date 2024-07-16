@@ -502,16 +502,21 @@ this part. For example, we may wish to enable</p>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">auto</span> y<span class="op">[]</span> <span class="op">=</span> x; <span class="co">// would this be allowed and y : int * ?</span></span></code></pre></div>
 </blockquote>
 <p>However, I find these arguments unconvincing. Array-to-pointer
-conversions has never been a problem. If we get a compilation error in
-the following program, then why should we think about it in the context
-of <code class="sourceCode cpp"><span class="kw">auto</span></code>?</p>
+conversions has never been a problem in the context of placeholder type
+deduction. If we get a compilation error in the following program, then
+why should we think about it in the context of
+<code class="sourceCode cpp"><span class="kw">auto</span></code>?</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x<span class="op">[</span><span class="dv">5</span><span class="op">]</span>;</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* ~auto~ */</span> <span class="dt">int</span> y<span class="op">[</span><span class="dv">5</span><span class="op">]</span> <span class="op">=</span> x;</span></code></pre></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* ~auto~ */</span> <span class="dt">int</span> y<span class="op">[</span><span class="dv">5</span><span class="op">]</span> <span class="op">=</span> x; <span class="co">// Compilation error, and it&#39;s OK</span></span></code></pre></div>
 <p><code class="sourceCode cpp"><span class="kw">auto</span></code> is a
-<em>placeholder</em> type and nothing more. It doesn’t change the
-initialization rules, so we propose enabling <code class="sourceCode cpp"><span class="kw">auto</span> x<span class="op">[]</span> <span class="op">=</span> <span class="op">{</span> a, b, c <span class="op">}</span>;</code>,
-but we don’t propose allowing <code class="sourceCode cpp"><span class="kw">auto</span> y<span class="op">[]</span> <span class="op">=</span> x;</code>
-from the above example.</p>
+<em>placeholder type</em> and nothing more. If we allowed <code class="sourceCode cpp"><span class="kw">auto</span> y<span class="op">[</span><span class="dv">5</span><span class="op">]</span> <span class="op">=</span> x</code>,
+it would mean that
+<code class="sourceCode cpp"><span class="kw">auto</span></code> has
+acquired an additional meaning that changes the initialization rules. So
+we propose enabling <code class="sourceCode cpp"><span class="kw">auto</span> x<span class="op">[]</span> <span class="op">=</span> <span class="op">{</span> a, b, c <span class="op">}</span></code>,
+but we don’t propose allowing either <code class="sourceCode cpp"><span class="kw">auto</span> y<span class="op">[]</span> <span class="op">=</span> x</code>
+or <code class="sourceCode cpp"><span class="kw">auto</span> y<span class="op">[</span><span class="dv">5</span><span class="op">]</span> <span class="op">=</span> x</code>
+from the examples above.</p>
 <h1 data-number="4" id="wording"><span class="header-section-number">4</span> Wording<a href="#wording" class="self-link"></a></h1>
 <p>Modify <span>9.2.9.7.2
 <a href="https://wg21.link/dcl.type.auto.deduct">[dcl.type.auto.deduct]</a></span>
