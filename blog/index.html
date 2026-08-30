@@ -31,7 +31,7 @@
 
     <!-- Styles -->
     
-    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚛️</text></svg>">
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛸</text></svg>">
     
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="canonical" href="https://eoanermine.com/blog/">
@@ -132,158 +132,158 @@
       <h3>
         
           
-            <a class="post-title" href="https://habr.com/ru/articles/791042/?utm_campaign=791042&utm_source=habrahabr&utm_medium=rss" target="_blank">Какой тип ordering должен возвращать мой operator&lt;=&gt; в C++?</a>
+            <a class="post-title" href="https://habr.com/ru/articles/1050514/?utm_campaign=1050514&utm_source=habrahabr&utm_medium=rss" target="_blank">Что нового в C++29: итоги июньской встречи в Брно</a>
             <svg width="2rem" height="2rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
               <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           
         
       </h3>
-      <p><img src="https://habrastorage.org/getpro/habr/upload_files/5ae/d85/467/5aed854677956be2c5f3a19a4353c54d.png" /><p>На Хабре было опубликовано уже достаточно статей, посвященных <a href="https://en.cppreference.com/w/cpp/language/operator_comparison#Three-way%20comparison" rel="noopener noreferrer nofollow">«spaceship operator» </a><code>operator&lt;=&gt;</code> (<a href="https://habr.com/ru/companies/microsoft/articles/458242/" rel="noopener noreferrer nofollow">[1]</a>, <a href="https://habr.com/ru/articles/766976/" rel="noopener noreferrer nofollow">[2]</a>, <a href="https://habr.com/ru/companies/yandex/articles/342354/" rel="noopener noreferrer nofollow">[3]</a>, <a href="https://habr.com/ru/companies/pvs-studio/articles/465575/" rel="noopener noreferrer nofollow">[4]</a>) И этой статьи бы не было, если бы все они были идеальны и описывали его во всей полноте. Но ни одна из них в деталях не рассказывает: <strong>а какой тип, собственно, должен возвращать наш </strong><code>operator&lt;=&gt;</code>, если мы реализуем его своими руками: <code>std::strong_ordering</code>, <code>std::weak_ordering</code> или <code>std::partial_ordering</code>? <strong>И какая вообще между ними разница?</strong></p><p></p> <a href="https://habr.com/ru/articles/791042/?utm_campaign=791042&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a></p>
+      <p><p>13 июня закончилась встреча комитета по стандартизации C++ (также известного как <a href="https://isocpp.org/std/the-committee" rel="noopener noreferrer nofollow">WG21</a>) в <a href="https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%BD%D0%BE" rel="noopener noreferrer nofollow">Брно </a>(Чехия), на которой комитет работал над будущим стандартом C++, C++29. В этой статье кратко пересказаны все принятые в него нововведения с примерами их использования и ссылками на оригинальные пропозалы для тех, кто захочет познакомиться с ними детально.</p> <a href="https://habr.com/ru/articles/1050514/?utm_campaign=1050514&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a></p>
       <p class="post-meta">
         1 min read &nbsp; &middot; &nbsp;
-        February 3, 2024
+        June 22, 2026
+        &nbsp; &middot; &nbsp; habr.com
+      </p>
+      <p class="post-tags">
+        <a href="/blog/2026">
+          <i class="fas fa-calendar fa-sm"></i> 2026 </a>
+
+          
+
+          
+    </p>
+    </li>
+
+    
+
+    
+    
+    
+    
+
+    <li>
+      <h3>
+        
+          
+            <a class="post-title" href="https://habr.com/ru/articles/922876/?utm_campaign=922876&utm_source=habrahabr&utm_medium=rss" target="_blank">[Перевод] Преобразование JSON в объекты C++ на этапе компиляции: демонстрация возможностей принятой в C++26 рефлексии</a>
+            <svg width="2rem" height="2rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          
+        
+      </h3>
+      <p><img src="https://habrastorage.org/getpro/habr/upload_files/256/9be/b6c/2569beb6c2e4214fab0b4ef5b6de3ae3.png" /><p>На прошлой неделе в Софии, столице Болгарии, <a href="https://herbsutter.com/2025/06/21/trip-report-june-2025-iso-c-standards-meeting-sofia-bulgaria/" rel="noopener noreferrer nofollow">закончилась работа над стандартом C++26</a>, который помимо <a href="https://en.cppreference.com/w/cpp/language/contracts.html" rel="noopener noreferrer nofollow">контрактов</a>, <a href="https://cppreference.com/w/cpp/experimental/execution.html" rel="noopener noreferrer nofollow">std::execution</a> и всего прочего теперь включает и рефлексию.</p><p>В этой статье будет продемонстрирован один из примеров её использования: преобразование строк в формате JSON в объекты C++ на этапе компиляции.</p> <a href="https://habr.com/ru/articles/922876/?utm_campaign=922876&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a></p>
+      <p class="post-meta">
+        1 min read &nbsp; &middot; &nbsp;
+        June 28, 2025
+        &nbsp; &middot; &nbsp; habr.com
+      </p>
+      <p class="post-tags">
+        <a href="/blog/2025">
+          <i class="fas fa-calendar fa-sm"></i> 2025 </a>
+
+          
+
+          
+    </p>
+    </li>
+
+    
+
+    
+    
+    
+    
+
+    <li>
+      <h3>
+        
+          
+            <a class="post-title" href="https://habr.com/ru/articles/912774/?utm_campaign=912774&utm_source=habrahabr&utm_medium=rss" target="_blank">Плоские контейнеры в C++23</a>
+            <svg width="2rem" height="2rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          
+        
+      </h3>
+      <p><p>Новый стандарт C++, C++23, впервые с C++11 расширил всем привычную линейку контейнеров: помимо знакомых <code>array</code>, <code>vector</code>, <code>(unordered_)set</code>, <code>(unordered_)map</code> и прочим в нее теперь входят непонятные <a href="https://cppreference.com/w/cpp/container/flat_set.html" rel="noopener noreferrer nofollow"><code>flat_set</code></a>, <a href="https://cppreference.com/w/cpp/container/flat_map.html" rel="noopener noreferrer nofollow"><code>flat_map</code></a>, <a href="https://cppreference.com/w/cpp/container/flat_multiset.html" rel="noopener noreferrer nofollow"><code>flat_multiset</code></a> и <a href="https://cppreference.com/w/cpp/container/flat_multimap.html" rel="noopener noreferrer nofollow"><code>flat_multimap</code></a>. Ответим на вопросы, что это за контейнеры, когда они могут быть полезны, сравним дизайн стандартизированных «плоских» контейнеров с дизайном плоских контейнеров из <a href="https://live.boost.org/doc/libs/1_88_0/doc/html/container/non_standard_containers.html#container.non_standard_containers.flat_xxx" rel="noopener noreferrer nofollow">Boost</a> и <a href="https://www.etlcpp.com/flat_map.html" rel="noopener noreferrer nofollow">ETL</a> и, конечно, произведём замеры и сравним производительность <code>flat_ </code>и не <code>flat_</code> контейнеров.</p> <a href="https://habr.com/ru/articles/912774/?utm_campaign=912774&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a></p>
+      <p class="post-meta">
+        1 min read &nbsp; &middot; &nbsp;
+        June 6, 2025
+        &nbsp; &middot; &nbsp; habr.com
+      </p>
+      <p class="post-tags">
+        <a href="/blog/2025">
+          <i class="fas fa-calendar fa-sm"></i> 2025 </a>
+
+          
+
+          
+    </p>
+    </li>
+
+    
+
+    
+    
+    
+    
+
+    <li>
+      <h3>
+        
+          
+            <a class="post-title" href="https://habr.com/ru/articles/880634/?utm_campaign=880634&utm_source=habrahabr&utm_medium=rss" target="_blank">inplace_vector: новый контейнер C++26</a>
+            <svg width="2rem" height="2rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          
+        
+      </h3>
+      <p><p>Вы когда-нибудь мечтали о динамически расширяемом&nbsp;<abbr class="habraabbr" title="То есть, хранящем свои элементы в памяти последовательно" data-title="&lt;p&gt;То есть, хранящем свои элементы в памяти последовательно&lt;/p&gt;" data-abbr="последовательном">последовательном</abbr>&nbsp;контейнере с фиксированной&nbsp;<abbr class="habraabbr" title="англ. capacity" data-title="&lt;p&gt;англ. capacity&lt;/p&gt;" data-abbr="емкостью">емкостью</abbr>, хранящем свои элементы на стеке? Комитет по стандартизации C++ исполняет желания! Теперь вам не нужно обращаться к&nbsp;<a href="https://www.boost.org/doc/libs/1_87_0/doc/html/container.html" rel="noopener noreferrer nofollow">Boost.Container</a>&nbsp;за&nbsp;<a href="https://www.boost.org/doc/libs/1_87_0/doc/html/doxygen/boost_container_header_reference/classboost_1_1container_1_1static__vector.html" rel="noopener noreferrer nofollow">boost::container::static_vector</a>. Встречайте,&nbsp;<a href="https://en.cppreference.com/w/cpp/container/inplace_vector" rel="noopener noreferrer nofollow">std::inplace_vector</a>&nbsp;(<a href="https://wg21.link/P0843" rel="noopener noreferrer nofollow">P0843</a>), принятый в C++26!</p> <a href="https://habr.com/ru/articles/880634/?utm_campaign=880634&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a></p>
+      <p class="post-meta">
+        1 min read &nbsp; &middot; &nbsp;
+        February 10, 2025
+        &nbsp; &middot; &nbsp; habr.com
+      </p>
+      <p class="post-tags">
+        <a href="/blog/2025">
+          <i class="fas fa-calendar fa-sm"></i> 2025 </a>
+
+          
+
+          
+    </p>
+    </li>
+
+    
+
+    
+    
+    
+    
+
+    <li>
+      <h3>
+        
+          
+            <a class="post-title" href="https://habr.com/ru/articles/841742/?utm_campaign=841742&utm_source=habrahabr&utm_medium=rss" target="_blank">C++ Дайджест №8 (2 сентября – 8 сентября 2024)</a>
+            <svg width="2rem" height="2rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          
+        
+      </h3>
+      <p><img src="https://habrastorage.org/getpro/habr/upload_files/11b/f70/1ce/11bf701ceedec82ca45ac017a9f61efe.png" /><p>Привет, Хабр! Сегодня я хочу вам представить подборку интересных новостей и материалов по C++ за последнюю неделю.</p><p>Приятного чтения!</p><p></p> <a href="https://habr.com/ru/articles/841742/?utm_campaign=841742&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a></p>
+      <p class="post-meta">
+        1 min read &nbsp; &middot; &nbsp;
+        September 10, 2024
         &nbsp; &middot; &nbsp; habr.com
       </p>
       <p class="post-tags">
         <a href="/blog/2024">
           <i class="fas fa-calendar fa-sm"></i> 2024 </a>
-
-          
-
-          
-    </p>
-    </li>
-
-    
-
-    
-    
-    
-    
-
-    <li>
-      <h3>
-        
-          
-            <a class="post-title" href="https://habr.com/ru/articles/788524/?utm_campaign=788524&utm_source=habrahabr&utm_medium=rss" target="_blank">Многообразие функциональных обёрток</a>
-            <svg width="2rem" height="2rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          
-        
-      </h3>
-      <p><p>В далёком 2002-ом комитет по стандартизации C++ посетил пропозал, предлагавший ввести шаблонный класс, некий обобщенный «указатель на функцию», способный работать как с простыми указателями на функции, указателями на методы классов, так и с произвольными функциональными объектами <a href="https://wg21.link/n1402" rel="noopener noreferrer nofollow">[1]</a>.</p><p>В качестве мотивации к принятию он приводил несколько весомых юзкейсов: колбэки и функции высших порядков.</p><p>Кто же знал, что его окажется недостаточно, а один из его юзкейсов — вовсе не его юзкейс?</p><p></p> <a href="https://habr.com/ru/articles/788524/?utm_campaign=788524&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a></p>
-      <p class="post-meta">
-        1 min read &nbsp; &middot; &nbsp;
-        January 24, 2024
-        &nbsp; &middot; &nbsp; habr.com
-      </p>
-      <p class="post-tags">
-        <a href="/blog/2024">
-          <i class="fas fa-calendar fa-sm"></i> 2024 </a>
-
-          
-
-          
-    </p>
-    </li>
-
-    
-
-    
-    
-    
-    
-
-    <li>
-      <h3>
-        
-          
-            <a class="post-title" href="https://habr.com/ru/articles/773894/?utm_campaign=773894&utm_source=habrahabr&utm_medium=rss" target="_blank">C++ Дайджест №7 (30 октября – 12 ноября 2023)</a>
-            <svg width="2rem" height="2rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          
-        
-      </h3>
-      <p><img src="https://habrastorage.org/getpro/habr/upload_files/f21/6d2/f2d/f216d2f2d553b76d2e100b7a2f30cf3b.png" /><p>Привет, Хабр! Сегодня я хочу вам представить подборку интересных новостей и материалов из мира C++ за последние две недели.</p><p>Приятного чтения!</p><p></p> <a href="https://habr.com/ru/articles/773894/?utm_campaign=773894&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a></p>
-      <p class="post-meta">
-        1 min read &nbsp; &middot; &nbsp;
-        November 14, 2023
-        &nbsp; &middot; &nbsp; habr.com
-      </p>
-      <p class="post-tags">
-        <a href="/blog/2023">
-          <i class="fas fa-calendar fa-sm"></i> 2023 </a>
-
-          
-
-          
-    </p>
-    </li>
-
-    
-
-    
-    
-    
-    
-
-    <li>
-      <h3>
-        
-          
-            <a class="post-title" href="https://habr.com/ru/articles/770958/?utm_campaign=770958&utm_source=habrahabr&utm_medium=rss" target="_blank">C++ Дайджест №6 (16 октября – 29 октября 2023)</a>
-            <svg width="2rem" height="2rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          
-        
-      </h3>
-      <p><img src="https://habrastorage.org/getpro/habr/upload_files/ea5/8b9/501/ea58b95019d1c5cd9d65e43b7493df20.png" /><p>Привет, Хабр! Сегодня я хочу вам представить подборку интересных новостей и материалов из мира C++ за последние две недели.</p><p>Приятного чтения!</p><p></p> <a href="https://habr.com/ru/articles/770958/?utm_campaign=770958&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a></p>
-      <p class="post-meta">
-        1 min read &nbsp; &middot; &nbsp;
-        October 31, 2023
-        &nbsp; &middot; &nbsp; habr.com
-      </p>
-      <p class="post-tags">
-        <a href="/blog/2023">
-          <i class="fas fa-calendar fa-sm"></i> 2023 </a>
-
-          
-
-          
-    </p>
-    </li>
-
-    
-
-    
-    
-    
-    
-
-    <li>
-      <h3>
-        
-          
-            <a class="post-title" href="https://habr.com/ru/articles/767818/?utm_campaign=767818&utm_source=habrahabr&utm_medium=rss" target="_blank">C++ Дайджест №5 (2 октября – 15 октября 2023)</a>
-            <svg width="2rem" height="2rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          
-        
-      </h3>
-      <p><img src="https://habrastorage.org/getpro/habr/upload_files/744/0e1/06b/7440e106b7d897c7c6e2970b02d36217.png" /><p>Привет, Хабр! Сегодня я хочу вам представить подборку интересных новостей и материалов из мира C++ за последние две недели.</p><p>Приятного чтения!</p><p></p> <a href="https://habr.com/ru/articles/767818/?utm_campaign=767818&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a></p>
-      <p class="post-meta">
-        1 min read &nbsp; &middot; &nbsp;
-        October 16, 2023
-        &nbsp; &middot; &nbsp; habr.com
-      </p>
-      <p class="post-tags">
-        <a href="/blog/2023">
-          <i class="fas fa-calendar fa-sm"></i> 2023 </a>
 
           
 
@@ -301,6 +301,7 @@
     </li><li class="page-item active"><a class="page-link" href="/blog/index.html" title="blog">1</a></li>
       <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blog - page 2">2</a></li>
       <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blog - page 3">3</a></li>
+      <li class="page-item "><a class="page-link" href="/blog/page/4/index.html" title="blog - page 4">4</a></li>
       <li class="page-item ">
       <a class="page-link" href="/blog/page/2/">Older</a>
     </li>
@@ -314,8 +315,7 @@
     <!-- Footer -->    
     <footer class="fixed-bottom">
       <div class="container mt-0">
-        &copy; Copyright 2024 Danil V. Sidoruk (aka eoanermine). Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-
+        &copy; Copyright 2026 Danil V. Sidoruk (aka eoanermine). 
       </div>
     </footer>
 
