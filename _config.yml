@@ -9,14 +9,10 @@ last_name: Sidoruk (aka eoanermine)
 email: admin@eoanermine.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Danil Sidoruk's (aka eoanermine) personal blog
-footer_text: >
-  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 keywords: danil_sidoruk, eoan-ermine, eoanermine  # add your own keywords or leave empty
 
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: ⚛️  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: 🛸  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://eoanermine.com # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/
@@ -136,9 +132,9 @@ related_blog_posts:
 # Follow instructions on https://giscus.app/ to setup for your repo to fill out
 # the information below.
 giscus:
-  repo: alshedivat/al-folio      # <your-github-user-name>/<your-github-repo-name>
+  repo: eoan-ermine/eoan-ermine.github.io
   repo_id: R_kgDOJPPmnQ
-  category: Comments             # name of the category under which discussions will be created
+  category: AnnouncementsDiscussions
   category_id: DIC_kwDOJPPmnc4CVWDC
   mapping: title                 # identify discussions by post title
   strict: 1                      # use strict identification mode
